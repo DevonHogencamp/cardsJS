@@ -1,5 +1,5 @@
 // Organized Deck of Cards Array
-var numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+var numbers = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13];
 
 // Deck for players
 var player1 = [];
@@ -34,7 +34,7 @@ function shuffle(arr) {
     }
 
     // Return the shuffled deck
-    console.log("The shuffled deck is " + arr + "\n");
+    console.log("The shuffled deck with a length of " + arr.length + "is " + arr + "\n");
     return arr;
 }
 
@@ -78,6 +78,8 @@ function playWar(deck1, deck2) {
         if (cardPlayer1 > cardPlayer2) {
             // Give player2 card to player1
             deck1.push(cardPlayer2);
+            deck1.push(cardPlayer1);
+            deck1.shift();
             deck2.shift();
 
             // Info about the round
@@ -94,6 +96,8 @@ function playWar(deck1, deck2) {
         else if (cardPlayer2 > cardPlayer1) {
             // Give player1 card to player1
             deck2.push(cardPlayer1);
+            deck2.push(cardPlayer2);
+            deck2.shift();
             deck1.shift();
 
             // Info about the round
